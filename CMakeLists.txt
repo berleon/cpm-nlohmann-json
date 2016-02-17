@@ -38,10 +38,17 @@ CPM_InitModule(${CPM_MODULE_NAME})
 #------------------------------------------------------------------------------
 # json as a subdirectory so that it can capture your compiler flags
 set(NLOHMANN_JSON_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/nlohmann-json)
+
+
+if(NOT DEFINED NLOHMANN_JSON_TAG)
+    message("NLOHMANN_JSON_TAG is not set. It is recommended to set it, otherwise your build will not be reproduceable.")
+    set(NLOHMANN_JSON_TAG "v1.1.0")
+endif()
+
 CPM_EnsureRepoIsCurrent(
   TARGET_DIR ${NLOHMANN_JSON_DIR}
   GIT_REPOSITORY "https://github.com/nlohmann/json/"
-  GIT_TAG origin/master
+  GIT_TAG ${NLOHMANN_JSON_TAG}
   USE_CACHING TRUE
   )
 
