@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 #-----------------------------------------------------------------------
 # CPM configuration
 #-----------------------------------------------------------------------
-set(CPM_MODULE_NAME nlohmann-json)
+set(CPM_MODULE_NAME nlohmann_json)
 set(CPM_LIB_TARGET_NAME ${CPM_MODULE_NAME})
 
 if ((DEFINED CPM_DIR) AND (DEFINED CPM_UNIQUE_ID) AND (DEFINED CPM_TARGET_NAME))
@@ -37,7 +37,7 @@ CPM_InitModule(${CPM_MODULE_NAME})
 # nlohmann/json
 #------------------------------------------------------------------------------
 # json as a subdirectory so that it can capture your compiler flags
-set(NLOHMANN_JSON_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/nlohmann-json)
+set(NLOHMANN_JSON_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/nlohmann_json)
 
 
 if(NOT DEFINED NLOHMANN_JSON_TAG)
